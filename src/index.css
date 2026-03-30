@@ -8,23 +8,24 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    @apply font-sans bg-brand-stone text-brand-slate;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-brand-forest;
   }
 }
 
-@layer utilities {
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+@layer components {
+  .glass-nav {
+    @apply bg-white/70 backdrop-blur-md border-b border-white/20;
   }
 
-  .animate-fade-in {
-    animation: fade-in 1s ease-out;
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-sm border border-white/50 shadow-xl;
+  }
+
+  .btn-primary {
+    @apply bg-brand-gold hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl;
   }
 }
