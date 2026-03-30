@@ -8,6 +8,7 @@
   }
 
   body {
+<<<<<<< HEAD
     @apply font-sans bg-brand-stone text-brand-slate;
   }
 
@@ -27,5 +28,25 @@
 
   .btn-primary {
     @apply bg-brand-gold hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl;
+=======
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+>>>>>>> 479324f34ce12aca4cd69b5d2d012ddb1e5f5a97
   }
 }

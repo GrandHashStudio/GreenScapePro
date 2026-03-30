@@ -2,6 +2,7 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+<<<<<<< HEAD
     extend: {
       colors: {
         brand: {
@@ -30,6 +31,9 @@ export default {
         }
       }
     },
+=======
+    extend: {},
+>>>>>>> 479324f34ce12aca4cd69b5d2d012ddb1e5f5a97
   },
   plugins: [],
 };
