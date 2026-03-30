@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
@@ -16,6 +17,7 @@ function App() {
       <About />
       <Testimonials />
       <Footer />
+      <Analytics />
     </div>
   );
 }
