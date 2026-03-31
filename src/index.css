@@ -2,13 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --brand-forest: #064E3B;
+  --brand-gold: #D97706;
+  --brand-slate: #475569;
+  --brand-stone: #F5F5F4;
+  --glass-white: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply text-brand-slate bg-brand-stone;
   }
 
   body {
-    @apply font-sans bg-brand-stone text-brand-slate;
+    @apply font-sans;
   }
 
   h1,
@@ -17,20 +27,20 @@
   h4,
   h5,
   h6 {
-    @apply font-display text-brand-forest;
+    @apply font-display text-brand-forest tracking-tight;
   }
 }
 
 @layer components {
   .glass-nav {
-    @apply bg-white/70 backdrop-blur-md border-b border-white/20;
+    @apply bg-white/60 backdrop-blur-xl border-b border-white/30 shadow-sm transition-all duration-500 ease-in-out;
   }
 
   .glass-card {
-    @apply bg-white/40 backdrop-blur-sm border border-white/50 shadow-xl;
+    @apply bg-white/40 backdrop-blur-md border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden;
   }
 
   .btn-primary {
-    @apply bg-brand-gold hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl;
+    @apply bg-brand-gold hover:bg-amber-600 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-brand-gold/20;
   }
 }
