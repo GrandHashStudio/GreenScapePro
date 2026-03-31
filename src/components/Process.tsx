@@ -1,22 +1,20 @@
 import { ClipboardCheck, PencilRuler, HardHat } from 'lucide-react';
+import PremiumIcon from './PremiumIcon';
 
 const steps = [
   {
-    lottie: 'https://lottie.host/7905d4b5-6807-4f6c-843c-66f916ea0584/H2Sj9Yt9hY.json',
     icon: ClipboardCheck,
     title: 'Precision Consultation',
     description: 'We begin with a deep dive into your vision, site analysis, and lifestyle needs to establish a solid foundation.',
     step: '01'
   },
   {
-    lottie: 'https://lottie.host/0a539a48-5c4d-4e94-825d-27f12e847c23/sFp9Q1uH8m.json',
     icon: PencilRuler,
     title: 'Architectural Design',
     description: 'Our design team creates detailed 3D renderings and material boards for your approval before a single stone is moved.',
     step: '02'
   },
   {
-    lottie: 'https://lottie.host/3697eef8-c64a-4d2c-806b-79013f997f8c/7k6h1212Bf.json',
     icon: HardHat,
     title: 'White-Glove Installation',
     description: 'Our elite craftsmen bring the design to life with meticulous attention to detail and professional project management.',
@@ -47,19 +45,8 @@ export default function Process() {
                   {item.step}
                 </div>
                 
-                {/* Lottie Animation Container */}
-                <div className="w-24 h-24 mb-8 bg-brand-forest/10 dark:bg-brand-gold/10 p-4 rounded-3xl group-hover:scale-110 transition-transform duration-500 flex items-center justify-center relative overflow-hidden">
-                  {/* @ts-ignore */}
-                  <dotlottie-player
-                    src={item.lottie}
-                    background="transparent"
-                    speed="1"
-                    style={{ width: '100%', height: '100%' }}
-                    loop
-                    autoplay
-                  />
-                  {/* Fallback Icon if Lottie fails to load or for structure */}
-                  <item.icon className="h-4 w-4 absolute bottom-2 right-2 opacity-20 text-brand-gold" />
+                <div className="mb-8 group">
+                  <PremiumIcon icon={item.icon} size={32} />
                 </div>
                 
                 <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
@@ -74,4 +61,5 @@ export default function Process() {
     </section>
   );
 }
+
 

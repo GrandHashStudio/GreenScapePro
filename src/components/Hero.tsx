@@ -69,8 +69,8 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-4xl pt-20">
-          <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white mb-8 animate-fade-in floating">
-            <Trophy className="h-4 w-4 text-brand-gold fill-brand-gold" />
+          <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white mb-8 animate-fade-in floating group cursor-default">
+            <Trophy className="h-4 w-4 text-brand-gold fill-brand-gold group-hover:scale-125 transition-transform" />
             <span className="text-xs md:text-sm font-bold tracking-wider uppercase">Voted #1 Landscaping Firm 2025</span>
           </div>
           
@@ -106,14 +106,15 @@ export default function Hero() {
               </div>
               <p className="text-white font-bold text-lg">500+ Verified Reviews</p>
             </div>
-            <div className="flex items-center space-x-3">
-              <ShieldCheck className="h-10 w-10 text-brand-gold" />
+            <div className="flex items-center space-x-3 group">
+              <ShieldCheck className="h-10 w-10 text-brand-gold group-hover:rotate-12 transition-transform" />
               <div>
                 <p className="text-white font-bold text-lg">25 Years</p>
                 <p className="text-white/60 text-sm">of Excellence</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
