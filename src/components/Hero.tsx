@@ -59,7 +59,7 @@ export default function Hero() {
           poster="https://images.unsplash.com/photo-1590059132718-5eb8a27d5536?auto=format&fit=crop&q=80&w=1920"
         >
           <source 
-            src="/videos/hero-pool.mp4" 
+            src="/videos/hero-cinematic-pool.mp4" 
             type="video/mp4" 
           />
         </video>
