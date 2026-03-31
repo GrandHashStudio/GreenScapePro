@@ -22,8 +22,8 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 - [x] **Hyper-Local Neighborhood SEO**: Dynamic sections in the footer that mention recent work in specific local elite residential areas (e.g., "Recently Finished in Highland Park").
 
 ## 5. Technical Polish
-- [ ] **Micro-animations (Lottie)**: Replace static SVG icons with subtle Lottie animations for a premium, alive feel.
-- [ ] **Custom Service-Specific Ad Landing Logic**: Code to dynamically swap Hero text based on incoming UTM parameters for "Hardscaping" or "Maintenance."
+- [x] **Micro-animations (Lottie)**: Replace static SVG icons with subtle Lottie animations for a premium, alive feel.
+- [x] **Custom Service-Specific Ad Landing Logic**: Code to dynamically swap Hero text based on incoming UTM parameters for "Hardscaping" or "Maintenance."
 
 ---
 
@@ -32,7 +32,7 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 - [x] Step 2: Designer & Case Study Build.
 - [x] Step 3: Signature Interaction Layer.
 - [x] Step 4: The Interactive "Magnet" Build.
-- [ ] Step 5: Final Performance & Local Optimization.
+- [x] Step 5: Final Performance & Local Optimization (UTM Landing & Lottie).
 
 ---
 *Created by Antigravity AI*

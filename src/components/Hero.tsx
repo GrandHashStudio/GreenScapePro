@@ -1,6 +1,44 @@
+import { useState, useEffect } from 'react';
 import { Star, ShieldCheck, Trophy } from 'lucide-react';
 
 export default function Hero() {
+  const [heroContent, setHeroContent] = useState({
+    title: (
+      <>
+        From Dream to Reality: <br />
+        <span className="text-brand-gold drop-shadow-sm">Elite Outdoor Living</span>
+      </>
+    ),
+    subtitle: "We don't just plant gardens; we craft architectural masterworks that redefine your home's luxury and value."
+  });
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const campaign = params.get('utm_campaign')?.toLowerCase();
+
+    if (campaign === 'hardscaping') {
+      setHeroContent({
+        title: (
+          <>
+            Precision Hardscaping: <br />
+            <span className="text-brand-gold drop-shadow-sm">Architectural Elegance</span>
+          </>
+        ),
+        subtitle: "Specialized stone masonry and structural design for the discerning homeowner. Transform your estate with our expert hardscape solutions."
+      });
+    } else if (campaign === 'maintenance') {
+      setHeroContent({
+        title: (
+          <>
+            Perpetual Perfection: <br />
+            <span className="text-brand-gold drop-shadow-sm">White-Glove Estate Care</span>
+          </>
+        ),
+        subtitle: "Horticultural excellence and precision maintenance programs designed for estate-level aesthetics and long-term vitality."
+      });
+    }
+  }, []);
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -37,12 +75,11 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[1.05] tracking-tight animate-slide-up">
-            From Dream to Reality: <br />
-            <span className="text-brand-gold drop-shadow-sm">Elite Outdoor Living</span>
+            {heroContent.title}
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl leading-relaxed animate-slide-up delay-100">
-            We don't just plant gardens; we craft architectural masterworks that redefine your home's luxury and value.
+            {heroContent.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5 mb-16 animate-slide-up delay-200">
@@ -91,4 +128,5 @@ export default function Hero() {
     </section>
   );
 }
+
 
