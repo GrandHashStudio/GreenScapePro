@@ -1,3 +1,5 @@
+import { Star, ShieldCheck, Trophy } from 'lucide-react';
+
 export default function Hero() {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -7,51 +9,77 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center scale-105"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1558905734-b8301f5a91cd?auto=format&fit=crop&q=80&w=1920)',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1590059132718-5eb8a27d5536?auto=format&fit=crop&q=80&w=1920)',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-forest/80 via-brand-forest/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-brand-stone/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-forest/60 via-brand-forest/20 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-3xl animate-slide-up">
-          <div className="flex items-center space-x-2 text-brand-gold mb-6 font-bold tracking-widest uppercase text-sm">
-            <span className="w-12 h-0.5 bg-brand-gold"></span>
-            <span>Elite Landscaping Services</span>
+        <div className="max-w-4xl pt-20">
+          <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white mb-8 animate-fade-in">
+            <Trophy className="h-4 w-4 text-brand-gold fill-brand-gold" />
+            <span className="text-xs md:text-sm font-bold tracking-wider uppercase">Voted #1 Landscaping Firm 2025</span>
           </div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[1.1] tracking-tight">
-            Elevate Your <br />
-            <span className="text-brand-gold">Outdoor Living</span>
+          
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[1.05] tracking-tight animate-slide-up">
+            From Dream to Reality: <br />
+            <span className="text-brand-gold drop-shadow-sm">Elite Outdoor Living</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-xl leading-relaxed">
-            From architectural garden designs to complete estate renovations. We create outdoor spaces that inspire.
+          
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl leading-relaxed animate-slide-up delay-100">
+            We don't just plant gardens; we craft architectural masterworks that redefine your home's luxury and value.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          
+          <div className="flex flex-col sm:flex-row gap-5 mb-16 animate-slide-up delay-200">
             <button
               onClick={scrollToContact}
               className="btn-primary"
             >
-              Get a Free Estimate
+              Start Your Transformation
             </button>
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 rounded-xl text-lg font-bold text-white border-2 border-white/30 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+              className="px-8 py-4 rounded-2xl text-lg font-bold text-white border-2 border-white/20 hover:bg-white/10 transition-all duration-300 backdrop-blur-md flex items-center justify-center gap-2"
             >
-              View Our Work
+              Explore Our Portfolio
             </button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-12 border-t border-white/10 max-w-2xl animate-fade-in delay-500">
+            <div className="space-y-1">
+              <div className="flex items-center space-x-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="h-4 w-4 text-brand-gold fill-brand-gold" />
+                ))}
+              </div>
+              <p className="text-white font-bold text-lg">500+ Verified Reviews</p>
+            </div>
+            <div className="flex items-center space-x-3">
+              <ShieldCheck className="h-10 w-10 text-brand-gold" />
+              <div>
+                <p className="text-white font-bold text-lg">25 Years</p>
+                <p className="text-white/60 text-sm">of Excellence</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-white rounded-full"></div>
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block">
+        <div 
+          onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+          className="w-8 h-12 border-2 border-white/20 rounded-full flex justify-center p-2 cursor-pointer hover:border-brand-gold/50 transition-colors"
+        >
+          <div className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-bounce"></div>
         </div>
       </div>
     </section>
   );
 }
+
