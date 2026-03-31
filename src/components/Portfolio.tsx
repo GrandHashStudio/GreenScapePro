@@ -1,33 +1,61 @@
+import { useState } from 'react';
 import BeforeAfter from './BeforeAfter';
+import CaseStudyLayout from './CaseStudyLayout';
 
 const projects = [
   {
     title: 'Modern Alpine Estate',
     category: 'Estate Renovation',
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
-    description: 'A complete transformation of a mountain-side property featuring multi-level stone terraces and native planting.'
+    description: 'A complete transformation of a mountain-side property featuring multi-level stone terraces and native planting.',
+    fullStory: 'Our goal was to harness the natural elevation of the site. We imported over 200 tons of local granite to build structural terraces that maximize the panoramic views while maintaining soil stability.',
+    metrics: [
+      { label: 'Stone Imported', value: '200 Tons' },
+      { label: 'Native Species', value: '45' }
+    ],
+    architect: 'Julian Vance'
   },
   {
     title: 'Zen Sanctuary Garden',
     category: 'Landscape Design',
     image: 'https://images.unsplash.com/photo-1558905734-b8301f5a91cd?auto=format&fit=crop&q=80&w=1200',
-    description: 'An urban backyard turned into a peaceful retreat with water features and minimalist architectural elements.'
+    description: 'An urban backyard turned into a peaceful retreat with water features and minimalist architectural elements.',
+    fullStory: 'In this dense urban environment, acoustic engineering was as important as aesthetics. The sound of the custom black-quartz water feature masks city noise, creating a true mental sanctuary.',
+    metrics: [
+      { label: 'Flow Rate', value: '50 GPM' },
+      { label: 'Quartz Used', value: '1.5 Tons' }
+    ],
+    architect: 'Eleanor Thorne'
   },
   {
     title: 'The Contemporary Courtyard',
     category: 'Hardscaping',
     image: 'https://images.unsplash.com/photo-1590059132718-5eb8a27d5536?auto=format&fit=crop&q=80&w=1200',
-    description: 'Bespoke entertainment hub with custom fire pit, integrated lighting, and premium Italian porcelain pavers.'
+    description: 'Bespoke entertainment hub with custom fire pit, integrated lighting, and premium Italian porcelain pavers.',
+    fullStory: 'The homeowner required a four-season entertainment space. We installed a subterranean drainage system and high-efficiency gas lines for the fire features, all masked by masterfully laid porcelain.',
+    metrics: [
+      { label: 'Paver Precision', value: '1/16"' },
+      { label: 'Light Zones', value: '12' }
+    ],
+    architect: 'Marcus Reed'
   },
   {
     title: 'Lakeside Manor Grounds',
     category: 'Estate Maintenance',
     image: 'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=1200',
-    description: 'Meticulous ongoing management of a 5-acre waterfront property, ensuring year-round visual excellence.'
+    description: 'Meticulous ongoing management of a 5-acre waterfront property, ensuring year-round visual excellence.',
+    fullStory: 'Maintaining an ecosystem this large requires constant surveillance. We use moisture-sensing technology and organic horticultural practices to keep the estate at its peak seasonal potential.',
+    metrics: [
+      { label: 'Property Size', value: '5 Acres' },
+      { label: 'Tech Sensors', value: '24' }
+    ],
+    architect: 'Eleanor Thorne'
   }
 ];
 
 export default function Portfolio() {
+  const [activeProject, setActiveProject] = useState<typeof projects[0] | null>(null);
+
   return (
     <section id="portfolio" className="py-24 bg-brand-stone relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +92,12 @@ export default function Portfolio() {
                   </li>
                 ))}
               </ul>
-              <button className="btn-primary !py-3 !px-6 text-base">Read The Full Story</button>
+              <button 
+                onClick={() => setActiveProject(projects[0])}
+                className="btn-primary !py-3 !px-6 text-base"
+              >
+                Read The Full Story
+              </button>
             </div>
           </div>
         </div>
@@ -73,7 +106,8 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="group relative h-[400px] md:h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2"
+              onClick={() => setActiveProject(project)}
+              className="group relative h-[400px] md:h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2 cursor-pointer"
             >
               <img 
                 src={project.image} 
@@ -96,13 +130,14 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
-
-        <div className="mt-20 text-center">
-          <button className="btn-primary">
-            View All Projects
-          </button>
-        </div>
       </div>
+
+      {activeProject && (
+        <CaseStudyLayout 
+          project={activeProject} 
+          onClose={() => setActiveProject(null)} 
+        />
+      )}
     </section>
   );
 }

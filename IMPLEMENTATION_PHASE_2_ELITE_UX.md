@@ -8,8 +8,8 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 - [ ] **Drone Flyover Parallax**: Add subtle parallax background sections using drone footage snippets to emphasize the scale of GreenScape projects.
 
 ## 2. Advanced Trust & Authority
-- [ ] **"The Architects" Section**: Individual feature cards for top designers with high-quality personal portraits and "Design Philosophy" tags.
-- [ ] **Deep-Dive Case Studies**: Create a `CaseStudyLayout` component to explain the specific challenges and architectural wins of 3 flagship projects.
+- [x] **"The Architects" Section**: Individual feature cards for top designers with high-quality personal portraits and "Design Philosophy" tags.
+- [x] **Deep-Dive Case Studies**: Create a `CaseStudyLayout` component to explain the specific challenges and architectural wins of 3 flagship projects.
 - [ ] **Investment ROI Calculator**: A sleek, interactive modal that demonstrates how landscaping increases land value (e.g., "A $50k investment can yield up to $150k in home equity").
 
 ## 3. Interactive Luxury (UI/UX)
@@ -29,7 +29,7 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 
 ## Phase 2 Milestone Checklist
 - [x] Step 1: Video Hero & Slider Foundation.
-- [ ] Step 2: Designer & Case Study Build.
+- [x] Step 2: Designer & Case Study Build.
 - [ ] Step 3: Signature Interaction Layer.
 - [ ] Step 4: The Interactive "Magnet" Build.
 - [ ] Step 5: Final Performance & Local Optimization.
