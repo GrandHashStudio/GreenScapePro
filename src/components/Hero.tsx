@@ -10,12 +10,21 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1590059132718-5eb8a27d5536?auto=format&fit=crop&q=80&w=1920)',
-        }}
-      >
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1590059132718-5eb8a27d5536?auto=format&fit=crop&q=80&w=1920"
+        >
+          <source 
+            src="https://assets.mixkit.co/videos/preview/mixkit-luxurious-residence-with-a-swimming-pool-and-garden-40428-large.mp4" 
+            type="video/mp4" 
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-brand-stone/90"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-brand-forest/60 via-brand-forest/20 to-transparent"></div>
       </div>

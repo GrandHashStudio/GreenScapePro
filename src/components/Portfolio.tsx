@@ -1,3 +1,4 @@
+import BeforeAfter from './BeforeAfter';
 
 const projects = [
   {
@@ -33,9 +34,39 @@ export default function Portfolio() {
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-block bg-brand-forest/10 text-brand-forest px-4 py-1 rounded-full text-sm font-bold tracking-wider uppercase mb-6">Our Portfolio</div>
           <h2 className="text-4xl md:text-6xl font-black text-brand-forest mb-6 tracking-tight">Recent <span className="text-brand-slate opacity-60">Masterpieces</span></h2>
-          <p className="text-xl text-brand-slate max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-brand-slate max-w-2xl mx-auto font-medium mb-20">
             Explore our curated selection of high-end outdoor living transformations.
           </p>
+        </div>
+
+        {/* Transformation Spotlight */}
+        <div className="mb-32 animate-fade-in delay-200">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-3/5 w-full">
+              <BeforeAfter 
+                beforeImage="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=1200"
+                afterImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200"
+              />
+            </div>
+            <div className="lg:w-2/5 space-y-8">
+              <div className="space-y-4">
+                <p className="text-brand-gold font-bold uppercase tracking-widest text-sm">Case Study: 001</p>
+                <h3 className="text-4xl font-black text-brand-forest tracking-tight">The Alpine Estate Transformation</h3>
+                <p className="text-xl text-brand-slate leading-relaxed">
+                  We took a neglected, overgrown hillside and sculpted it into a multi-tiered sanctuary of leisure. 
+                </p>
+              </div>
+              <ul className="space-y-4">
+                {['Custom Italian Pavers', 'Automated Lighting', 'Native Sculptural Planting'].map((feature, i) => (
+                  <li key={i} className="flex items-center space-x-3 text-brand-slate font-bold">
+                    <span className="w-2 h-2 bg-brand-gold rounded-full"></span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className="btn-primary !py-3 !px-6 text-base">Read The Full Story</button>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
