@@ -18,8 +18,8 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 - [x] **"Illumination" Dark Mode**: A toggle that transitions the site into "Night View," showcasing how professional landscape lighting transforms the designs.
 
 ## 4. Conversion & Personalization
-- [ ] **Landscape Style Quiz**: An interactive flow (Multi-step) to help users discover if they prefer "Modern Architectural," "English Heritage," or "Zen Lush" styles.
-- [ ] **Hyper-Local Neighborhood SEO**: Dynamic sections in the footer that mention recent work in specific local elite residential areas (e.g., "Recently Finished in Highland Park").
+- [x] **Landscape Style Quiz**: An interactive flow (Multi-step) to help users discover if they prefer "Modern Architectural," "English Heritage," or "Zen Lush" styles.
+- [x] **Hyper-Local Neighborhood SEO**: Dynamic sections in the footer that mention recent work in specific local elite residential areas (e.g., "Recently Finished in Highland Park").
 
 ## 5. Technical Polish
 - [ ] **Micro-animations (Lottie)**: Replace static SVG icons with subtle Lottie animations for a premium, alive feel.
@@ -31,7 +31,7 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 - [x] Step 1: Video Hero & Slider Foundation.
 - [x] Step 2: Designer & Case Study Build.
 - [x] Step 3: Signature Interaction Layer.
-- [ ] Step 4: The Interactive "Magnet" Build.
+- [x] Step 4: The Interactive "Magnet" Build.
 - [ ] Step 5: Final Performance & Local Optimization.
 
 ---

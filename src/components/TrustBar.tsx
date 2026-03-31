@@ -20,7 +20,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="bg-white py-12 border-b border-green-800/10">
+    <section className="bg-transparent py-12 border-b border-green-800/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {indicators.map((indicator, index) => {
@@ -28,21 +28,19 @@ export default function TrustBar() {
             return (
               <div
                 key={index}
-                className="flex items-center justify-center space-x-4 p-6 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-center space-x-4 p-6 rounded-lg hover:bg-brand-stone/10 transition-colors"
               >
                 <div className="flex-shrink-0">
-                  <Icon className="h-10 w-10 text-green-800" strokeWidth={2} />
+                  <Icon className="h-10 w-10 text-brand-forest dark:text-brand-gold" strokeWidth={2} />
                 </div>
                 <div>
                   <h3
-                    className="text-lg font-bold text-gray-900"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    className="text-lg font-bold"
                   >
                     {indicator.title}
                   </h3>
                   <p
-                    className="text-sm text-slate-600"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    className="text-sm opacity-80"
                   >
                     {indicator.description}
                   </p>

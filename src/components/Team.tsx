@@ -26,17 +26,17 @@ const architects = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 bg-white relative">
+    <section id="team" className="py-24 bg-transparent relative transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 animate-fade-in">
           <div className="max-w-2xl">
             <div className="inline-block bg-brand-gold/10 text-brand-gold px-4 py-1 rounded-full text-sm font-bold tracking-wider uppercase mb-6">The Architects</div>
-            <h2 className="text-4xl md:text-6xl font-black text-brand-forest leading-tight">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Humanizing <br />
-              <span className="text-brand-slate opacity-60">Elite Project Design</span>
+              <span className="opacity-40">Elite Project Design</span>
             </h2>
           </div>
-          <p className="text-xl text-brand-slate max-w-sm leading-relaxed mb-2 font-medium">
+          <p className="text-xl max-w-sm leading-relaxed mb-2 font-medium opacity-80">
             Meet the award-winning visionaries behind our most iconic outdoor spaces.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function Team() {
                   alt={member.name} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-forest/90 via-brand-forest/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="flex space-x-4 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
@@ -70,7 +70,7 @@ export default function Team() {
               </div>
               
               <div className="px-6">
-                <p className="text-brand-slate leading-relaxed font-medium">
+                <p className="leading-relaxed font-medium opacity-80">
                   {member.bio}
                 </p>
               </div>

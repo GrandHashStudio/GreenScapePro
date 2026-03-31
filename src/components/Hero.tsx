@@ -25,7 +25,7 @@ export default function Hero() {
             type="video/mp4" 
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-brand-stone/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[var(--bg-color)]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-brand-forest/60 via-brand-forest/20 to-transparent"></div>
       </div>
 

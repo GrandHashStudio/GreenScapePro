@@ -88,6 +88,36 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        
+        {/* Hyper-Local Neighborhood SEO */}
+        <div className="pt-16 pb-8 border-t border-white/10">
+          <div className="flex flex-col items-center">
+            <h4 className="text-brand-gold font-bold uppercase tracking-widest text-xs mb-10 text-center opacity-80">
+              Elite Neighborhood Expertise & Recent Projects
+            </h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-4 w-full">
+              {[
+                { name: 'Highland Park', type: 'Modern Architectural' },
+                { name: 'Preston Hollow', type: 'English Heritage' },
+                { name: 'Lakewood', type: 'Zen Lush Sanctuary' },
+                { name: 'Southlake Estates', type: 'Transitional Hardscape' },
+                { name: 'Westover Hills', type: 'Architectural Masterpiece' }
+              ].map((loc) => (
+                <div key={loc.name} className="group cursor-pointer text-center px-2">
+                  <div className="text-white/30 group-hover:text-brand-gold transition-colors font-bold text-[10px] uppercase tracking-tighter mb-1.5">
+                    Recent Work in
+                  </div>
+                  <div className="text-white font-black tracking-tight text-sm group-hover:text-brand-gold transition-colors mb-1 leading-tight">
+                    {loc.name}
+                  </div>
+                  <div className="text-[10px] text-white/20 group-hover:text-white/40 uppercase font-black tracking-widest transition-colors">
+                    {loc.type}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/40 font-bold text-sm uppercase tracking-widest">

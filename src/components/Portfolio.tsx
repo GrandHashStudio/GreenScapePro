@@ -57,12 +57,12 @@ export default function Portfolio() {
   const [activeProject, setActiveProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 bg-brand-stone relative">
+    <section id="portfolio" className="py-24 bg-transparent relative transition-colors duration-500 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-block bg-brand-forest/10 text-brand-forest px-4 py-1 rounded-full text-sm font-bold tracking-wider uppercase mb-6">Our Portfolio</div>
-          <h2 className="text-4xl md:text-6xl font-black text-brand-forest mb-6 tracking-tight">Recent <span className="text-brand-slate opacity-60">Masterpieces</span></h2>
-          <p className="text-xl text-brand-slate max-w-2xl mx-auto font-medium mb-20">
+          <div className="inline-block bg-brand-forest/10 dark:bg-brand-gold/10 text-brand-forest dark:text-brand-gold px-4 py-1 rounded-full text-sm font-bold tracking-wider uppercase mb-6 transition-colors duration-500">Our Portfolio</div>
+          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">Recent <span className="opacity-40">Masterpieces</span></h2>
+          <p className="text-xl max-w-2xl mx-auto font-medium mb-20 opacity-70">
             Explore our curated selection of high-end outdoor living transformations.
           </p>
         </div>
@@ -79,14 +79,14 @@ export default function Portfolio() {
             <div className="lg:w-2/5 space-y-8">
               <div className="space-y-4">
                 <p className="text-brand-gold font-bold uppercase tracking-widest text-sm">Case Study: 001</p>
-                <h3 className="text-4xl font-black text-brand-forest tracking-tight">The Alpine Estate Transformation</h3>
-                <p className="text-xl text-brand-slate leading-relaxed">
+                <h3 className="text-4xl font-black tracking-tight">The Alpine Estate Transformation</h3>
+                <p className="text-xl leading-relaxed opacity-80">
                   We took a neglected, overgrown hillside and sculpted it into a multi-tiered sanctuary of leisure. 
                 </p>
               </div>
               <ul className="space-y-4">
                 {['Custom Italian Pavers', 'Automated Lighting', 'Native Sculptural Planting'].map((feature, i) => (
-                  <li key={i} className="flex items-center space-x-3 text-brand-slate font-bold">
+                  <li key={i} className="flex items-center space-x-3 font-bold opacity-90">
                     <span className="w-2 h-2 bg-brand-gold rounded-full"></span>
                     <span>{feature}</span>
                   </li>
@@ -114,7 +114,7 @@ export default function Portfolio() {
                 alt={project.title} 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-forest via-brand-forest/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
               
               <div className="absolute inset-0 p-10 flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-2">
                 <div className="inline-block bg-brand-gold text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full mb-4 w-fit shadow-lg">

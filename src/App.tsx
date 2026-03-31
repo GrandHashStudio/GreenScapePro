@@ -10,6 +10,7 @@ import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import StyleQuiz from './components/StyleQuiz';
 
 import CustomCursor from './components/CustomCursor';
 
@@ -23,6 +24,7 @@ function App() {
       <Process />
       <Services />
       <Portfolio />
+      <StyleQuiz />
       <About />
       <Team />
       <Testimonials />

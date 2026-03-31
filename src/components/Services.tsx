@@ -29,17 +29,17 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white relative">
+    <section id="services" className="py-24 bg-transparent relative transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 animate-fade-in">
           <div className="max-w-2xl">
             <div className="inline-block bg-brand-gold/10 text-brand-gold px-4 py-1 rounded-full text-sm font-bold tracking-wider uppercase mb-6">Our Expertise</div>
-            <h2 className="text-4xl md:text-6xl font-black text-brand-forest leading-tight">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Master-Crafted <br />
-              <span className="text-brand-slate opacity-60">Landscaping Solutions</span>
+              <span className="opacity-40">Landscaping Solutions</span>
             </h2>
           </div>
-          <p className="text-xl text-brand-slate max-w-sm leading-relaxed mb-2">
+          <p className="text-xl max-w-sm leading-relaxed mb-2 opacity-80">
             Elevating properties through a blend of horticultural science and architectural vision.
           </p>
         </div>

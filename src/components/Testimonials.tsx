@@ -29,9 +29,9 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="py-32 bg-brand-forest relative overflow-hidden">
+    <section id="reviews" className="py-32 bg-brand-forest dark:bg-[#061e18] relative overflow-hidden transition-colors duration-500">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-brand-stone to-transparent opacity-20"></div>
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent opacity-10"></div>
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
       
@@ -91,4 +91,3 @@ export default function Testimonials() {
     </section>
   );
 }
-
