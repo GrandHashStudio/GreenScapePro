@@ -13,9 +13,9 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 - [ ] **Investment ROI Calculator**: A sleek, interactive modal that demonstrates how landscaping increases land value (e.g., "A $50k investment can yield up to $150k in home equity").
 
 ## 3. Interactive Luxury (UI/UX)
-- [ ] **Scroll-Driven "Growth" Animations**: Refine entrance animations so elements "bloom" (scale/rotate) as they appear on screen.
-- [ ] **Bespoke Cursor Interaction**: Add a custom cursor with a trailing soft-glow effect in forest green for desktop users.
-- [ ] **"Illumination" Dark Mode**: A toggle that transitions the site into "Night View," showcasing how professional landscape lighting transforms the designs.
+- [x] **Scroll-Driven "Growth" Animations**: Refine entrance animations so elements "bloom" (scale/rotate) as they appear on screen.
+- [x] **Bespoke Cursor Interaction**: Add a custom cursor with a trailing soft-glow effect in forest green for desktop users.
+- [x] **"Illumination" Dark Mode**: A toggle that transitions the site into "Night View," showcasing how professional landscape lighting transforms the designs.
 
 ## 4. Conversion & Personalization
 - [ ] **Landscape Style Quiz**: An interactive flow (Multi-step) to help users discover if they prefer "Modern Architectural," "English Heritage," or "Zen Lush" styles.
@@ -30,7 +30,7 @@ This phase aims to move from a "professional website" to a "digital luxury exper
 ## Phase 2 Milestone Checklist
 - [x] Step 1: Video Hero & Slider Foundation.
 - [x] Step 2: Designer & Case Study Build.
-- [ ] Step 3: Signature Interaction Layer.
+- [x] Step 3: Signature Interaction Layer.
 - [ ] Step 4: The Interactive "Magnet" Build.
 - [ ] Step 5: Final Performance & Local Optimization.
 

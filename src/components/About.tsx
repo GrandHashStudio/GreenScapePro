@@ -1,6 +1,9 @@
 import { CheckCircle } from 'lucide-react';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 export default function About() {
+  const [ref, isVisible] = useIntersectionObserver();
+  
   const benefits = [
     'Certified landscape professionals',
     'Free consultation and estimates',
@@ -18,10 +21,10 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
+    <section id="about" ref={ref} className="py-24 transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="order-2 lg:order-1 relative">
+          <div className={`order-2 lg:order-1 relative animate-bloom ${isVisible ? 'show' : ''}`}>
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-gold/10 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-forest/10 rounded-full blur-3xl"></div>
             <img
@@ -35,7 +38,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className={`order-1 lg:order-2 animate-bloom ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '200ms' }}>
             <div className="text-brand-gold font-bold tracking-widest uppercase text-sm mb-4">Our Legacy</div>
             <h2 className="text-4xl md:text-5xl font-black text-brand-forest mb-8 leading-tight">
               Crafting Nature <br /> Into Art Since 2011

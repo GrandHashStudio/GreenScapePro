@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Menu, X, Leaf, Moon, Sun } from 'lucide-react';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,14 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -49,6 +58,19 @@ export default function Navigation() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
+            
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2.5 rounded-xl bg-brand-stone/50 hover:bg-brand-stone transition-all duration-300 group shadow-inner"
+              title={isDarkMode ? 'Switch to Day View' : 'Switch to Night View (Illumination)'}
+            >
+              {isDarkMode ? (
+                <Sun className="h-5 w-5 text-brand-gold animate-spin-slow" />
+              ) : (
+                <Moon className="h-5 w-5 text-brand-forest group-hover:text-brand-gold transition-colors" />
+              )}
+            </button>
+
             <button
               onClick={() => scrollToSection('contact')}
               className="bg-brand-forest hover:bg-green-900 text-white px-7 py-2.5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-900/20"
@@ -57,12 +79,20 @@ export default function Navigation() {
             </button>
           </div>
 
-          <button
-            className="md:hidden text-gray-700"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center space-x-4 md:hidden">
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2 rounded-lg bg-brand-stone/50"
+            >
+              {isDarkMode ? <Sun className="h-5 w-5 text-brand-gold" /> : <Moon className="h-5 w-5 text-brand-forest" />}
+            </button>
+            <button
+              className="text-gray-700"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 

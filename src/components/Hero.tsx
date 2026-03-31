@@ -31,7 +31,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-4xl pt-20">
-          <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white mb-8 animate-fade-in">
+          <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white mb-8 animate-fade-in floating">
             <Trophy className="h-4 w-4 text-brand-gold fill-brand-gold" />
             <span className="text-xs md:text-sm font-bold tracking-wider uppercase">Voted #1 Landscaping Firm 2025</span>
           </div>
