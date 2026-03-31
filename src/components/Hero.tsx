@@ -118,14 +118,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block">
-        <div 
-          onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-          className="w-8 h-12 border-2 border-white/20 rounded-full flex justify-center p-2 cursor-pointer hover:border-brand-gold/50 transition-colors"
-        >
-          <div className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-bounce"></div>
-        </div>
-      </div>
     </section>
   );
 }

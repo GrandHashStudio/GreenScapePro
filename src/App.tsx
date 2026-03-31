@@ -12,12 +12,9 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import StyleQuiz from './components/StyleQuiz';
 
-import CustomCursor from './components/CustomCursor';
-
 function App() {
   return (
     <div className="min-h-screen">
-      <CustomCursor />
       <Navigation />
       <Hero />
       <TrustBar />
