@@ -80,7 +80,7 @@ export default function Footer() {
               {[
                 { name: 'Highland Park', type: 'Modern Architectural', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=400' },
                 { name: 'Preston Hollow', type: 'English Heritage', image: 'https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?auto=format&fit=crop&q=80&w=400' },
-                { name: 'Lakewood', type: 'Zen Lush Sanctuary', image: 'https://images.unsplash.com/photo-1582268611958-ebaf161c8ec2?auto=format&fit=crop&q=80&w=400' },
+                { name: 'Lakewood', type: 'Zen Lush Sanctuary', image: '/images/zen_lush_sanctuary.png' },
                 { name: 'Southlake Estates', type: 'Transitional Hardscape', image: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&q=80&w=400' },
                 { name: 'Westover Hills', type: 'Architectural Masterpiece', image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=400' }
               ].map((loc) => (
