@@ -72,20 +72,20 @@ export default function Portfolio() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-3/5 w-full">
               <BeforeAfter 
-                beforeImage="/images/alpine_estate_before.png"
-                afterImage="/images/alpine_estate_after.png"
+                beforeImage="/images/transformation_before.jpg"
+                afterImage="/images/transformation_after.jpg"
               />
             </div>
             <div className="lg:w-2/5 space-y-8">
               <div className="space-y-4">
-                <p className="text-brand-gold font-bold uppercase tracking-widest text-sm">Case Study: 001</p>
-                <h3 className="text-4xl font-black tracking-tight">The Alpine Estate Transformation</h3>
+                <p className="text-brand-gold font-bold uppercase tracking-widest text-sm">Special Case Study: 004</p>
+                <h3 className="text-4xl font-black tracking-tight">The Backyard Culinary Sanctuary</h3>
                 <p className="text-xl leading-relaxed opacity-80">
-                  We took a neglected, overgrown hillside and sculpted it into a multi-tiered sanctuary of leisure. 
+                  From a dilapidated urban waste space to a world-class outdoor kitchen and entertainment hub.
                 </p>
               </div>
               <ul className="space-y-4">
-                {['Custom Italian Pavers', 'Automated Lighting', 'Native Sculptural Planting'].map((feature, i) => (
+                {['Custom Outdoor Kitchen', 'Premium Slate Flooring', 'Integrated Designer Lighting'].map((feature, i) => (
                   <li key={i} className="flex items-center space-x-3 font-bold opacity-90">
                     <span className="w-2 h-2 bg-brand-gold rounded-full"></span>
                     <span>{feature}</span>

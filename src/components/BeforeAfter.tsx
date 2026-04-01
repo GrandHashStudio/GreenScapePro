@@ -43,38 +43,43 @@ export default function BeforeAfter({ beforeImage, afterImage }: BeforeAfterProp
   return (
     <div 
       ref={containerRef}
-      className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden shadow-2xl cursor-ew-resize select-none"
+      className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden shadow-2xl cursor-ew-resize select-none border-4 border-white/10"
       onMouseDown={onMouseDown}
       onTouchStart={onMouseDown}
     >
+      {/* After Image (Base Layer) */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${afterImage})` }}
       ></div>
       
+      {/* Before Image (Clipping Layer) */}
       <div 
-        className="absolute inset-0 bg-cover bg-center border-r-[3px] border-brand-gold shadow-lg"
+        className="absolute inset-0 bg-cover bg-center border-r-[3px] border-brand-gold shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-10"
         style={{ 
           backgroundImage: `url(${beforeImage})`,
-          width: `${sliderPos}%`
+          clipPath: `inset(0 ${100 - sliderPos}% 0 0)`
         }}
       ></div>
 
-      {/* Slider Knob */}
+      {/* Slider Visual Indicator (Line + Knob) */}
       <div 
-        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-brand-gold rounded-full flex items-center justify-center shadow-2xl pointer-events-none"
+        className="absolute top-0 bottom-0 z-20 pointer-events-none"
         style={{ left: `${sliderPos}%` }}
       >
-        <div className="flex space-x-1">
-          <div className="w-1 h-3 bg-white/50 rounded-full"></div>
-          <div className="w-1 h-3 bg-white/50 rounded-full"></div>
+        <div className="absolute inset-y-0 -left-[1.5px] w-[3px] bg-brand-gold shadow-[0_0_20px_rgba(184,142,47,0.5)]"></div>
+        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,0,0,0.4)] border-2 border-brand-gold">
+          <div className="flex space-x-1.5">
+            <div className="w-1 h-4 bg-brand-gold rounded-full"></div>
+            <div className="w-1 h-4 bg-brand-gold rounded-full"></div>
+          </div>
         </div>
       </div>
 
-      <div className="absolute top-6 left-6 inline-block bg-black/40 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+      <div className="absolute top-6 left-6 z-30 inline-block bg-black/60 backdrop-blur-md text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-white/10">
         Before
       </div>
-      <div className="absolute top-6 right-6 inline-block bg-brand-gold/80 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+      <div className="absolute top-6 right-6 z-30 inline-block bg-brand-gold text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
         After
       </div>
     </div>
