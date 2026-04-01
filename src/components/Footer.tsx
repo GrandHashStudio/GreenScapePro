@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-full h-px bg-white/10"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20">
           <div>
             <div className="flex items-center space-x-3 mb-8">
               <div className="bg-brand-gold p-2 rounded-lg">
@@ -67,25 +67,6 @@ export default function Footer() {
               <li className="hover:text-brand-gold transition-colors cursor-pointer">Landscape Design</li>
               <li className="hover:text-brand-gold transition-colors cursor-pointer">Maintenance</li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-brand-gold font-bold uppercase tracking-widest text-sm mb-8">
-              Newsletter
-            </h3>
-            <p className="text-white/60 mb-6 font-medium">
-              Get landscaping tips and seasonal offers delivered to your inbox.
-            </p>
-            <div className="flex flex-col space-y-3">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="bg-white/10 border border-white/10 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white/20 transition-all font-medium"
-              />
-              <button className="bg-brand-gold hover:bg-amber-600 text-white py-3 rounded-xl font-bold transition-all transform hover:scale-105 shadow-xl">
-                Subscribe
-              </button>
-            </div>
           </div>
         </div>
         
