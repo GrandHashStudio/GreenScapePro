@@ -51,18 +51,14 @@ export default function Hero() {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
+          src="/videos/hero-cinematic-pool.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1920"
-        >
-          <source 
-            src="/videos/hero-cinematic-pool.mp4" 
-            type="video/mp4" 
-          />
-        </video>
+          preload="auto"
+          className="w-full h-full object-cover bg-black"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[var(--bg-color)]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-brand-forest/60 via-brand-forest/20 to-transparent"></div>
       </div>
