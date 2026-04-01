@@ -6,20 +6,43 @@ export default function ContactForm() {
     name: '',
     email: '',
     phone: '',
-    service: 'Landscape Design',
+    service: '',
+    otherService: '',
     message: ''
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission
+    
+    // Validation
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = 'Full Name is required.';
+    if (!formData.phone.trim()) newErrors.phone = 'Phone Number is required.';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email Address is required.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    }
+    if (!formData.service) newErrors.service = 'Please select a service interest.';
+    if (formData.service === 'Other' && (!formData.otherService || !formData.otherService.trim())) {
+      newErrors.otherService = 'Please specify your service interest.';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
     setIsSubmitted(true);
     setFormData({
       name: '',
       email: '',
       phone: '',
-      service: 'Landscape Design',
+      service: '',
+      otherService: '',
       message: ''
     });
   };
@@ -75,57 +98,89 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold uppercase tracking-wider ml-1 opacity-70">Full Name</label>
                   <input
-                    required
                     type="text"
                     placeholder="John Doe"
-                    className="w-full bg-brand-stone/50 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white dark:focus:bg-white/10 transition-all font-medium"
+                    className={`w-full bg-brand-stone/50 dark:bg-white/5 border ${errors.name ? 'border-red-500/50 focus:ring-red-500/50 dark:border-red-500/50 dark:focus:ring-red-500/50' : 'border-black/5 dark:border-white/10 focus:ring-brand-gold'} rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:bg-white dark:focus:bg-white/10 transition-all font-medium`}
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      if (errors.name) setErrors({ ...errors, name: '' });
+                    }}
                   />
+                  {errors.name && <p className="text-red-600 dark:text-red-400 text-xs ml-2 mt-1 font-bold">{errors.name}</p>}
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold uppercase tracking-wider ml-1 opacity-70">Phone Number</label>
                   <input
-                    required
                     type="tel"
                     placeholder="(555) 000-0000"
-                    className="w-full bg-brand-stone/50 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white dark:focus:bg-white/10 transition-all font-medium"
+                    className={`w-full bg-brand-stone/50 dark:bg-white/5 border ${errors.phone ? 'border-red-500/50 focus:ring-red-500/50 dark:border-red-500/50 dark:focus:ring-red-500/50' : 'border-black/5 dark:border-white/10 focus:ring-brand-gold'} rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:bg-white dark:focus:bg-white/10 transition-all font-medium`}
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) => {
+                      setFormData({ ...formData, phone: e.target.value });
+                      if (errors.phone) setErrors({ ...errors, phone: '' });
+                    }}
                   />
+                  {errors.phone && <p className="text-red-600 dark:text-red-400 text-xs ml-2 mt-1 font-bold">{errors.phone}</p>}
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-bold uppercase tracking-wider ml-1 opacity-70">Email Address</label>
                 <input
-                  required
                   type="email"
                   placeholder="john@example.com"
-                  className="w-full bg-brand-stone/50 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white dark:focus:bg-white/10 transition-all font-medium"
+                  className={`w-full bg-brand-stone/50 dark:bg-white/5 border ${errors.email ? 'border-red-500/50 focus:ring-red-500/50 dark:border-red-500/50 dark:focus:ring-red-500/50' : 'border-black/5 dark:border-white/10 focus:ring-brand-gold'} rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:bg-white dark:focus:bg-white/10 transition-all font-medium`}
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) => {
+                    setFormData({ ...formData, email: e.target.value });
+                    if (errors.email) setErrors({ ...errors, email: '' });
+                  }}
                 />
+                {errors.email && <p className="text-red-600 dark:text-red-400 text-xs ml-2 mt-1 font-bold">{errors.email}</p>}
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-bold uppercase tracking-wider ml-1 opacity-70">Service Interest</label>
                 <select
-                  className="w-full bg-brand-stone/50 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white dark:focus:bg-white/10 transition-all font-medium appearance-none"
+                  className={`w-full bg-brand-stone/50 dark:bg-white/5 border ${errors.service ? 'border-red-500/50 focus:ring-red-500/50 dark:border-red-500/50 dark:focus:ring-red-500/50' : 'border-black/5 dark:border-white/10 focus:ring-brand-gold'} rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:bg-white dark:focus:bg-white/10 transition-all font-medium appearance-none ${!formData.service ? 'text-black/50 dark:text-white/50' : ''}`}
                   value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  onChange={(e) => {
+                    setFormData({ ...formData, service: e.target.value });
+                    if (errors.service) setErrors({ ...errors, service: '' });
+                  }}
                 >
-                  <option>Landscape Design</option>
-                  <option>Hardscaping</option>
-                  <option>Elite Lawn Care</option>
-                  <option>Estate Maintenance</option>
+                  <option value="" disabled>Choose below</option>
+                  <option value="Landscape Design">Landscape Design</option>
+                  <option value="Hardscaping">Hardscaping</option>
+                  <option value="Elite Lawn Care">Elite Lawn Care</option>
+                  <option value="Estate Maintenance">Estate Maintenance</option>
+                  <option value="Other">Other</option>
                 </select>
+                {errors.service && <p className="text-red-600 dark:text-red-400 text-xs ml-2 mt-1 font-bold">{errors.service}</p>}
               </div>
+
+              {formData.service === 'Other' && (
+                <div className="space-y-2 animate-popup">
+                  <label className="text-sm font-bold uppercase tracking-wider ml-1 opacity-70">Specify Service</label>
+                  <input
+                    type="text"
+                    placeholder="Briefly describe the service you need..."
+                    className={`w-full bg-brand-stone/50 dark:bg-white/5 border ${errors.otherService ? 'border-red-500/50 focus:ring-red-500/50 dark:border-red-500/50 dark:focus:ring-red-500/50' : 'border-black/5 dark:border-white/10 focus:ring-brand-gold'} rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:bg-white dark:focus:bg-white/10 transition-all font-medium`}
+                    value={formData.otherService}
+                    onChange={(e) => {
+                      setFormData({ ...formData, otherService: e.target.value });
+                      if (errors.otherService) setErrors({ ...errors, otherService: '' });
+                    }}
+                  />
+                  {errors.otherService && <p className="text-red-600 dark:text-red-400 text-xs ml-2 mt-1 font-bold">{errors.otherService}</p>}
+                </div>
+              )}
 
               <div className="space-y-2">
                 <label className="text-sm font-bold uppercase tracking-wider ml-1 opacity-70">Project Details</label>
