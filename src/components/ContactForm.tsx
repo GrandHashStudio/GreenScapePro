@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, Phone, Mail, Calendar } from 'lucide-react';
+import { Send, Phone, Mail, Calendar, CheckCircle, X } from 'lucide-react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,11 +9,19 @@ export default function ContactForm() {
     service: 'Landscape Design',
     message: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate submission
-    alert('Thank you! Our elite design team will contact you within 24 hours.');
+    setIsSubmitted(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: 'Landscape Design',
+      message: ''
+    });
   };
 
   return (
@@ -145,6 +153,45 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {isSubmitted && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+            onClick={() => setIsSubmitted(false)}
+          />
+          <div className="relative bg-white dark:bg-[#0c1a16] border border-black/10 dark:border-brand-gold/20 rounded-3xl shadow-2xl p-8 md:p-12 max-w-md w-full animate-popup">
+            <button 
+              onClick={() => setIsSubmitted(false)}
+              className="absolute top-6 right-6 text-black/40 hover:text-black dark:text-white/40 dark:hover:text-white transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            
+            <div className="flex flex-col items-center text-center">
+              <div className="h-20 w-20 bg-brand-forest/10 dark:bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 premium-glow">
+                <CheckCircle className="h-10 w-10 text-brand-forest dark:text-brand-gold" />
+              </div>
+              
+              <h3 className="text-3xl font-black mb-4 tracking-tight">
+                Thanks for Submitting!
+              </h3>
+              
+              <p className="text-lg opacity-80 leading-relaxed mb-8">
+                Your request for a private consultation has been received. Our elite design team will contact you shortly to schedule your on-site evaluation.
+              </p>
+              
+              <button 
+                onClick={() => setIsSubmitted(false)}
+                className="w-full btn-primary !rounded-2xl py-4"
+              >
+                Close Window
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
