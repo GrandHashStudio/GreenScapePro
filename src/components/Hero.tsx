@@ -56,7 +56,7 @@ export default function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1590059132718-5eb8a27d5536?auto=format&fit=crop&q=80&w=1920"
+          poster="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1920"
         >
           <source 
             src="/videos/hero-cinematic-pool.mp4" 

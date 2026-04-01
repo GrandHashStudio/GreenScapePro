@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'Modern Alpine Estate',
     category: 'Estate Renovation',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/alpine_estate_after.png',
     description: 'A complete transformation of a mountain-side property featuring multi-level stone terraces and native planting.',
     fullStory: 'Our goal was to harness the natural elevation of the site. We imported over 200 tons of local granite to build structural terraces that maximize the panoramic views while maintaining soil stability.',
     metrics: [
@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'Zen Sanctuary Garden',
     category: 'Landscape Design',
-    image: 'https://images.unsplash.com/photo-1558905734-b8301f5a91cd?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/zen_sanctuary.png?v=2',
     description: 'An urban backyard turned into a peaceful retreat with water features and minimalist architectural elements.',
     fullStory: 'In this dense urban environment, acoustic engineering was as important as aesthetics. The sound of the custom black-quartz water feature masks city noise, creating a true mental sanctuary.',
     metrics: [
@@ -30,7 +30,7 @@ const projects = [
   {
     title: 'The Contemporary Courtyard',
     category: 'Hardscaping',
-    image: 'https://images.unsplash.com/photo-1590059132718-5eb8a27d5536?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/contemporary_courtyard.png?v=2',
     description: 'Bespoke entertainment hub with custom fire pit, integrated lighting, and premium Italian porcelain pavers.',
     fullStory: 'The homeowner required a four-season entertainment space. We installed a subterranean drainage system and high-efficiency gas lines for the fire features, all masked by masterfully laid porcelain.',
     metrics: [
@@ -42,7 +42,7 @@ const projects = [
   {
     title: 'Lakeside Manor Grounds',
     category: 'Estate Maintenance',
-    image: 'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/lakeside_manor.png',
     description: 'Meticulous ongoing management of a 5-acre waterfront property, ensuring year-round visual excellence.',
     fullStory: 'Maintaining an ecosystem this large requires constant surveillance. We use moisture-sensing technology and organic horticultural practices to keep the estate at its peak seasonal potential.',
     metrics: [
@@ -72,8 +72,8 @@ export default function Portfolio() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-3/5 w-full">
               <BeforeAfter 
-                beforeImage="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=1200"
-                afterImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200"
+                beforeImage="/images/alpine_estate_before.png"
+                afterImage="/images/alpine_estate_after.png"
               />
             </div>
             <div className="lg:w-2/5 space-y-8">

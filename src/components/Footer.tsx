@@ -97,13 +97,21 @@ export default function Footer() {
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-4 w-full">
               {[
-                { name: 'Highland Park', type: 'Modern Architectural' },
-                { name: 'Preston Hollow', type: 'English Heritage' },
-                { name: 'Lakewood', type: 'Zen Lush Sanctuary' },
-                { name: 'Southlake Estates', type: 'Transitional Hardscape' },
-                { name: 'Westover Hills', type: 'Architectural Masterpiece' }
+                { name: 'Highland Park', type: 'Modern Architectural', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=400' },
+                { name: 'Preston Hollow', type: 'English Heritage', image: 'https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?auto=format&fit=crop&q=80&w=400' },
+                { name: 'Lakewood', type: 'Zen Lush Sanctuary', image: 'https://images.unsplash.com/photo-1582268611958-ebaf161c8ec2?auto=format&fit=crop&q=80&w=400' },
+                { name: 'Southlake Estates', type: 'Transitional Hardscape', image: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&q=80&w=400' },
+                { name: 'Westover Hills', type: 'Architectural Masterpiece', image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=400' }
               ].map((loc) => (
-                <div key={loc.name} className="group cursor-pointer text-center px-2">
+                <div key={loc.name} className="group cursor-pointer text-center px-2 flex flex-col items-center">
+                  <div className="relative w-16 h-16 mb-4 rounded-2xl overflow-hidden ring-1 ring-white/10 group-hover:ring-brand-gold/50 transition-all duration-500 shadow-lg">
+                    <img 
+                      src={loc.image} 
+                      alt={`Project in ${loc.name}`} 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100" 
+                    />
+                    <div className="absolute inset-0 bg-brand-forest/40 group-hover:bg-transparent transition-colors duration-500"></div>
+                  </div>
                   <div className="text-white/30 group-hover:text-brand-gold transition-colors font-bold text-[10px] uppercase tracking-tighter mb-1.5">
                     Recent Work in
                   </div>

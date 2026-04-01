@@ -5,25 +5,25 @@ const services = [
   {
     icon: Scissors,
     title: 'Elite Lawn Care',
-    image: 'https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&q=80&w=800',
+    image: '/images/elite_lawn_care.png',
     description: 'Precision manicuring and biological fertilization programs designed for estate-level aesthetics and soil health.',
   },
   {
     icon: Hammer,
     title: 'Architectural Hardscaping',
-    image: 'https://images.unsplash.com/photo-1558905734-b8301f5a91cd?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&q=80&w=800',
     description: 'Masterfully crafted patios, structural retaining walls, and custom stonework that stand the test of time.',
   },
   {
     icon: Palette,
     title: 'Bespoke Landscape Design',
-    image: 'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800',
     description: 'Immersive 3D design experiences where form meets function to create your personal outdoor sanctuary.',
   },
   {
     icon: Calendar,
     title: 'Estate Management',
-    image: 'https://images.unsplash.com/photo-1617103023188-fb6c08d8b8b4?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1621944190310-e3cca1564bd7?auto=format&fit=crop&q=80&w=800',
     description: 'Comprehensive year-round surveillance and maintenance of your property’s exterior architectural integrity.',
   },
 ];
